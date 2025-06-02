@@ -54,7 +54,7 @@ st.markdown("""
 def load_data():
     try:
         # Load data with comprehensive cleaning
-        df = pd.read_csv("charlotte_cornelius_subset.csv")
+        df = pd.read_csv("charlotte_cornelius_redacted.csv")
         
         # Clean numeric columns - handle various formats
         def clean_numeric(x):
@@ -552,8 +552,8 @@ with tab4:
                 </div>
             </div>
             <div style='margin-top: 15px;'>
-                <p><b>Owner:</b> {property_data.get('OwnerName', 'N/A')}</p>
-                <p><b>Owner Type:</b> {property_data.get('OwnerType', 'N/A')}</p>
+                <p><b>Owner:</b> 🔒 Redacted in public demo</p>
+                <p><b>Mailing Address:</b> 🔒 Available in client dashboards</p>
                 <p><b>Last Sale Date:</b> {property_data.get('LastSaleDate', 'N/A')}</p>
                 <p><b>Teardown Candidate:</b> {'✅ Yes' if property_data.get('IsTeardown', False) else '❌ No'}</p>
             </div>
@@ -604,6 +604,8 @@ st.sidebar.download_button(
     file_name="cornelius_properties.csv",
     mime="text/csv"
 )
+st.sidebar.caption("🚫 Owner names and mailing addresses have been redacted in this demo for privacy. Full data available in client-specific dashboards.")
+
 
 with st.sidebar.expander("📊 Want more insights like crime, zoning, or permits?"):
     st.markdown("""
