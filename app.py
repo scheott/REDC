@@ -16,6 +16,14 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+st.markdown("""
+<div style='padding: 15px; background-color: #e3f2fd; border-left: 5px solid #2196F3; border-radius: 6px; margin-bottom: 10px; color: #000000;'>
+    <strong>🔧 Demo Mode:</strong> This dashboard uses public property data to showcase the kinds of tools I can build for developers and real estate teams. 
+    <br>This is <em>not</em> a live product feed — but all features are customizable for your needs.
+</div>
+""", unsafe_allow_html=True)
+
+
 with st.expander("📘 About this tool"):
     st.markdown("""
     This dashboard helps developers, investors, and urban planners explore underutilized parcels in Mecklenburg County.
@@ -576,6 +584,15 @@ with tab4:
 
         else:
             st.info("No comparable properties found with current filters.")
+    st.markdown("---")
+    st.markdown("""
+    <div style='background-color:#2e2e2e; padding: 15px; border-radius: 8px; margin-top: 20px;'>
+        <h4 style='color:#fff;'>🚀 Let's Build Yours</h4>
+        <p style='color:#ddd;'>Interested in a dashboard like this for your firm or market?</p>
+        <p style='color:#ddd;'>📧 <a href="mailto:schenkotto1@gmail.com">schenkotto1@gmail.com</a><br>
+        🔗 <a href="https://www.linkedin.com/in/otto-schenk/">linkedin.com/in/otto-schenk</a></p>
+    </div>
+    """, unsafe_allow_html=True)
 
 
 # --- Download Section ---
@@ -587,6 +604,29 @@ st.sidebar.download_button(
     file_name="cornelius_properties.csv",
     mime="text/csv"
 )
+
+with st.sidebar.expander("📊 Want more insights like crime, zoning, or permits?"):
+    st.markdown("""
+    This demo only scratches the surface. I can integrate:
+    - 🧭 **Crime heatmaps** (e.g., violent crimes, property crimes)
+    - 🏗️ **Permit history and open construction**
+    - 🏫 **School scores, walkability, and transit**
+    - 📐 **Zoning overlays and compliance alerts**
+    - 🏘️ **Custom comparables (BR/BA, GLA, year built)**
+    - 📄 **One-click PDF reports or email alerts**
+    
+    Let’s tailor this for your neighborhood, city, or investment strategy.
+    """)
+
+
+st.sidebar.markdown("---")
+st.sidebar.markdown("""
+📩 **Want a dashboard like this for your business?**
+
+Let's build one together — reach out at  
+📧 [schenkotto1@gmail.com](mailto:schenkotto1@gmail.com)  
+🔗 [linkedin.com/in/otto-schenk](https://www.linkedin.com/in/otto-schenk/)
+""")
 
 # --- Footer ---
 st.markdown("""
